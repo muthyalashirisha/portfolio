@@ -1,0 +1,82 @@
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.background__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  animation: float 18s ease-in-out infinite;
+}
+
+.background__orb--1 {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(0, 212, 170, 0.45), transparent 70%);
+  top: -120px;
+  right: -80px;
+}
+
+.background__orb--2 {
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(56, 139, 253, 0.25), transparent 70%);
+  bottom: 10%;
+  left: -100px;
+  animation-delay: -9s;
+}
+
+.background__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 212, 170, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 170, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 20%, transparent 75%);
+}
+
+.background__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px circle at var(--x, 50%) var(--y, 30%),
+    rgba(0, 212, 170, 0.08),
+    transparent 60%
+  );
+  transition: opacity 0.3s ease;
+}
+
+.background__scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  opacity: 0.5;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, -20px) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .background__orb {
+    animation: none;
+  }
+}

@@ -1,0 +1,31 @@
+.footer {
+  padding: 2rem 0 3rem;
+  border-top: 1px solid var(--border);
+  position: relative;
+}
+
+.footer__text {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  animation: footer-blink 4s ease-in-out infinite;
+}
+
+@keyframes footer-blink {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 12px rgba(0, 212, 170, 0.3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer__text {
+    animation: none;
+    opacity: 1;
+  }
+}
