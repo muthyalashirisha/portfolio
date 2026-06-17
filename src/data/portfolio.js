@@ -25,6 +25,7 @@ export const navLinks = [
   { label: 'Experience', href: '#experience' },
   { label: 'Achievements', href: '#achievements' },
   { label: 'Contact', href: '#contact' },
+  { label: 'Resume', href: `${import.meta.env.BASE_URL}Shirisha_M.pdf`, external: true },
 ];
 
 export const skillGroups = [
@@ -201,9 +202,21 @@ export const achievements = [
 ];
 
 export const certifications = [
-  { name: 'Associate Google Cloud Engineer', issuer: 'Google' },
-  { name: 'SI Associate Certification', issuer: 'MongoDB' },
-  { name: 'SI Architect Certification', issuer: 'MongoDB' },
+  {
+    name: 'Associate Google Cloud Engineer',
+    issuer: 'Google',
+    url: 'https://www.credly.com/badges/7e475a03-788a-41ca-bbe8-bcea2b98a4ba/public_url',
+  },
+  {
+    name: 'SI Associate Certification',
+    issuer: 'MongoDB',
+    url: 'https://drive.google.com/file/d/1Xr-mpD-ARkFmsUnn9j7BSPs3Wvm8Vf0n/view',
+  },
+  {
+    name: 'SI Architect Certification',
+    issuer: 'MongoDB',
+    url: 'https://www.credly.com/badges/90071616-5806-4869-bfd4-5a32ec14fb50/public_url',
+  },
 ];
 
 export const education = [
@@ -248,6 +261,12 @@ export const contactLinks = [
     label: 'LeetCode',
     href: 'https://leetcode.com/u/Shirisha_Muthyala/',
     icon: 'LC',
+    external: true,
+  },
+  {
+    label: 'Resume',
+    href: `${import.meta.env.BASE_URL}Shirisha_M.pdf`,
+    icon: '📄',
     external: true,
   },
 ];

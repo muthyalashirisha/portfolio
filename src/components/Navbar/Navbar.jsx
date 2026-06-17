@@ -45,14 +45,15 @@ export default function Navbar() {
         </button>
 
         <ul className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
-          {navLinks.map(({ label, href }) => {
-            const id = href.replace('#', '');
+          {navLinks.map(({ label, href, external }) => {
+            const id = external ? '' : href.replace('#', '');
             return (
               <li key={href}>
                 <a
                   href={href}
                   onClick={handleNavClick}
-                  className={activeSection === id ? 'navbar__link--active' : ''}
+                  className={!external && activeSection === id ? 'navbar__link--active' : ''}
+                  {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 >
                   {label}
                 </a>

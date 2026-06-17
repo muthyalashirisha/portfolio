@@ -32,8 +32,25 @@ export default function Achievements() {
                   className="achievements__cert"
                   style={{ '--cert-delay': `${i * 80}ms` }}
                 >
-                  <span className="achievements__cert-name">{cert.name}</span>
-                  <span className="achievements__cert-issuer">{cert.issuer}</span>
+                  {cert.url ? (
+                    <a
+                      href={cert.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="achievements__cert-link"
+                    >
+                      <span className="achievements__cert-name">
+                        {cert.name}
+                        <span className="achievements__cert-icon">↗</span>
+                      </span>
+                      <span className="achievements__cert-issuer">{cert.issuer}</span>
+                    </a>
+                  ) : (
+                    <div className="achievements__cert-content">
+                      <span className="achievements__cert-name">{cert.name}</span>
+                      <span className="achievements__cert-issuer">{cert.issuer}</span>
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>

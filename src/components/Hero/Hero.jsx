@@ -71,6 +71,14 @@ export default function Hero() {
                   <span>View Experience</span>
                   <span className="hero__btn-arrow">→</span>
                 </a>
+                <a
+                  href={`${import.meta.env.BASE_URL}Shirisha_M.pdf`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero__btn hero__btn--secondary"
+                >
+                  <span>View Resume</span>
+                </a>
                 <a href="#contact" className="hero__btn hero__btn--secondary">
                   <span>Get in Touch</span>
                 </a>

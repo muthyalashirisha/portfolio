@@ -86,18 +86,13 @@
 }
 
 .achievements__cert {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.5rem;
-  padding: 0.875rem 1rem;
   background: var(--bg-elevated);
   border-left: 3px solid var(--accent);
   border-radius: 0 8px 8px 0;
   transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
   animation: slide-in 0.6s ease backwards;
   animation-delay: var(--cert-delay, 0ms);
+  display: flex;
 }
 
 @keyframes slide-in {
@@ -111,6 +106,36 @@
   transform: translateX(8px);
   background: rgba(0, 212, 170, 0.08);
   border-left-color: #38bdf8;
+}
+
+.achievements__cert-link,
+.achievements__cert-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.875rem 1rem;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.achievements__cert-link {
+  cursor: pointer;
+}
+
+.achievements__cert-icon {
+  font-size: 0.85em;
+  margin-left: 0.35rem;
+  color: var(--text-muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.achievements__cert:hover .achievements__cert-icon {
+  color: var(--accent);
+  transform: translate(2px, -2px);
 }
 
 .achievements__cert-name {
